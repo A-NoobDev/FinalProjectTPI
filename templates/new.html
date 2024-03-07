@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if edit_mode or post %}
+    <h2>Edit Post</h2>
+  {% else %}
+    <h2>Create New Post</h2>
+  {% endif %}
+
+
+  <form id="newPostForm" method="post" enctype="multipart/form-data" action="{{ url_for('edit_post', id=post.id) if edit_mode else url_for('create_or_edit_post') }}">
+    {% if edit_mode %}
+      <input type="hidden" name="id" value="{{ post.id }}">
+    {% endif %}
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="{{ post.title if edit_mode else '' }}" required>
+    <br>
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" rows="10" required>{{ post.content if edit_mode else '' }}</textarea>
+    <br>
+
+    <button type="submit">{% if edit_mode %}Update Post{% else %}Create Post{% endif %}</button>
+  </form>
+{% endblock %}

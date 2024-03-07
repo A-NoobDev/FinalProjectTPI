@@ -1,0 +1,135 @@
+:root {
+  --light-bg: #f8f8f8;
+  --light-text: #333;
+  --dark-bg: #222;
+  --dark-text: #fff;
+
+  --light-alt-accent: #f1f1f1;
+  --light-accent: #288ffe;
+  --dark-accent: #4f87b5; 
+  --dark-alt-accent: #559fdc;
+}
+
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  /* Additional styles for specific elements in dark mode */
+}
+
+.dark-mode header {
+  background-color: var(--dark-alt-accent); /* Dark theme override */
+  color: var(--dark-text);
+}
+
+.dark-mode footer{
+  background-color: var(--dark-alt-accent); /* Dark theme override */
+  color: var(--dark-text);
+}
+
+.dark-mode main {
+  background-color: var(--dark-accent); /* Dark theme override */
+  color: var(--dark-text);
+}
+
+.dark-mode .themetoggle {
+  background-color: var(--dark-alt-accent);
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Replace with your preferred font */
+  font-size: 16px;
+  min-height: 100vh;
+  margin: 0px;
+}
+  
+  header {
+    background-color: var(--light-alt-accent); /* Light theme default */
+    color: var(--light-text);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  main {
+    background-color: var(--light-accent); /* Light theme default */
+  }
+  
+  footer {
+    background-color: var(--light-alt-accent);
+    color: var(--light-text);
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 100%;
+  }
+
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  form {
+    padding: 20px;
+    border-radius: 2px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+  }
+
+  button {
+    background-color: rgb(73, 73, 255);
+    color: var(--dark-text);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+
+  @media (max-width: 768px) {
+    header, main, footer {
+      padding: 10px;
+    }
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    display: none;
+  }
+  
+  .dark-mode #theme-icon {
+    display: none;
+  }
+  
+  .dark-mode #theme-icon-alt {
+    display: block;
+  }
+
+  .themetoggle {
+    border-radius: 20px;
+    background-color: var(--light-accent);
+  }
+  
+  
+
+  
+  
