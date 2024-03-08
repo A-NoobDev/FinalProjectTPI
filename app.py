@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 
-# Placeholder posts data (replace with your database interaction)
+# Placeholder posts data
 posts = [
     {"id": 1, "title": "Post 1", "content": "Content of post 1", },
     {"id": 2, "title": "Post 2", "content": "Content of post 2", },
@@ -21,6 +21,8 @@ def index():
         # Find the post with the given ID
         post = next((p for p in posts if str(p["id"]) == post), None)
     return render_template("index.html", posts=posts, is_dark_theme=is_dark_theme, updated_post=post)
+
+# ----------------------- Route for displaying the edit post page
 
 
 @app.route("/post/<int:id>/edit", methods=["GET", "POST"])
@@ -40,13 +42,14 @@ def edit_post(id):
             post["content"] = content
 
             # Pass the updated post to the index template
-            updated_post = {"id": post["id"], "title": post["title"], "content": post["content"]}
+            updated_post = {
+                "id": post["id"], "title": post["title"], "content": post["content"]}
             return redirect(url_for("index", post=updated_post))
 
         else:
             return render_template("error.html", message="Post not found")
 
-# ---------------------- Route for create or edit a post
+# ---------------------- Route for choosing create or edit a post
 
 
 @app.route("/create_or_edit_post", methods=["GET", "POST"])
@@ -67,8 +70,6 @@ def create_or_edit_post():
     return render_template("new.html", edit_mode=bool(id))
 
 # ----------------------- Route for creating new posts
-
-
 @app.route("/new", methods=["GET", "POST"])
 def new_post():
     if request.method == "GET":

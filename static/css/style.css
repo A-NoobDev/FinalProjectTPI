@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
   --light-bg: #f8f8f8;
   --light-text: #333;
@@ -6,130 +8,156 @@
 
   --light-alt-accent: #f1f1f1;
   --light-accent: #288ffe;
-  --dark-accent: #4f87b5; 
+  --dark-accent: #4f87b5;
   --dark-alt-accent: #559fdc;
 }
 
 .dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-text);
-  /* Additional styles for specific elements in dark mode */
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
 
 .dark-mode header {
-  background-color: var(--dark-alt-accent); /* Dark theme override */
+  background-color: var(--dark-alt-accent);
   color: var(--dark-text);
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
 
-.dark-mode footer{
-  background-color: var(--dark-alt-accent); /* Dark theme override */
+.dark-mode footer {
+  background-color: var(--dark-alt-accent);
   color: var(--dark-text);
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
 
 .dark-mode main {
-  background-color: var(--dark-accent); /* Dark theme override */
+  background-color: var(--dark-accent);
   color: var(--dark-text);
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
 
 .dark-mode .themetoggle {
   background-color: var(--dark-alt-accent);
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
 
 
 body {
-  font-family: 'Open Sans', sans-serif; /* Replace with your preferred font */
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   min-height: 100vh;
   margin: 0px;
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
 }
-  
-  header {
-    background-color: var(--light-alt-accent); /* Light theme default */
-    color: var(--light-text);
-    padding: 15px;
-    text-align: center;
-  }
-  
-  main {
-    background-color: var(--light-accent); /* Light theme default */
-  }
-  
+
+header {
+  background-image: linear-gradient(to right, blue, pink);
+  color: var(--light-text);
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
+  animation: headerGradientAnimation 30s ease infinite;
+
+}
+
+main {
+  background-color: var(--light-accent);
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+footer {
+  background-color: var(--light-alt-accent);
+  color: var(--light-text);
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 100%;
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+form {
+  padding: 20px;
+  border-radius: 2px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+}
+
+button {
+  background-color: rgb(73, 73, 255);
+  color: var(--dark-text);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.7s ease-in-out 0.7s, color 0.7s ease-in-out 0.7s;
+}
+
+
+@media (max-width: 768px) {
+
+  header,
+  main,
   footer {
-    background-color: var(--light-alt-accent);
-    color: var(--light-text);
     padding: 10px;
-    text-align: center;
-    position: sticky;
-    top: 100%;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
+.dark-mode #theme-icon {
+  display: none;
+}
+
+.dark-mode #theme-icon-alt {
+  display: block;
+}
+
+.themetoggle {
+  border-radius: 20px;
+  background-color: var(--light-accent);
+}
+
+@keyframes headerGradientAnimation {
+  0% {
+    background-position: 0% 0%;
   }
 
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  form {
-    padding: 20px;
-    border-radius: 2px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input, textarea {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    display: block;
+  50% {
+    background-position: 200% 0%;
   }
 
-  button {
-    background-color: rgb(73, 73, 255);
-    color: var(--dark-text);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+  100% {
+    background-position: 0% 0%;
   }
-  
-
-  @media (max-width: 768px) {
-    header, main, footer {
-      padding: 10px;
-    }
-  }
-
-  .icon {
-    width: 24px;
-    height: 24px;
-    display: none;
-  }
-  
-  .dark-mode #theme-icon {
-    display: none;
-  }
-  
-  .dark-mode #theme-icon-alt {
-    display: block;
-  }
-
-  .themetoggle {
-    border-radius: 20px;
-    background-color: var(--light-accent);
-  }
-  
-  
-
-  
-  
+}

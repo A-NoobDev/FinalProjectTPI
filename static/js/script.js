@@ -1,3 +1,16 @@
+// Loading animation
+document.addEventListener("DOMContentLoaded", function() {
+  const loaderWrapper = document.querySelector(".loader-wrapper");
+  const loader = document.querySelector(".loader");
+
+  gsap.fromTo(loader, { rotation: 0 }, { rotation: 360, duration: 2, repeat: -1, ease: "linear" });
+
+  window.addEventListener("load", function() {
+    gsap.to(loaderWrapper, { duration: 0.5, opacity: 0, pointerEvents: "none", onComplete: () => loaderWrapper.classList.add("loaded") });
+  });
+});
+
+
 // Add event listener for form submission
 const newPostForm = document.getElementById("newPostForm");
 
@@ -54,6 +67,8 @@ toggleButton.addEventListener('click', function () {
     footer.style.color = bodyElement.classList.contains('dark-mode') ? 'var(--dark-text)' : 'var(--light-text)';
   });
 });
+
+
 
 
 

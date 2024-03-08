@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="https://kit.fontawesome.com/bbdccb4e58.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://kit.fontawesome.com/bbdccb4e58.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="{{ 'dark-mode' if is_dark_theme else '' }}">
-    <header>
-        <h1>Simple Blog</h1>
-    </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    <button id="theme-toggle" data-theme="{{ 'light' if is_dark_theme else 'dark' }}" class="themetoggle">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-      </button>
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Simple Blog</p>
-    </footer>
+  <header>
+    <h1>Simple Blog</h1>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <button id="theme-toggle" data-theme="{{ 'light' if is_dark_theme else 'dark' }}" class="themetoggle">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
+  <footer>
+    <p>&copy;
+      <script>document.write(new Date().getFullYear());</script> Simple Blog
+    </p>
+  </footer>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fzff8psFVBoxOI6mM6T215P1cx+QCw3c1UlW+KjNQ4j6LjTv4V0Q3Ulwqu1K0l52U1n+5l3guLrOjrDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+  integrity="sha512-fzff8psFVBoxOI6mM6T215P1cx+QCw3c1UlW+KjNQ4j6LjTv4V0Q3Ulwqu1K0l52U1n+5l3guLrOjrDg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </html>
