@@ -54,7 +54,7 @@ toggleButton.addEventListener('click', function () {
   themeIconMoon.style.display = bodyElement.classList.contains('dark-mode') ? 'none' : 'block';
   themeIconSun.style.display = bodyElement.classList.contains('dark-mode') ? 'block' : 'none';
 
-  // Optionally update individual element styles based on theme change
+  // Update individual element styles based on theme change
   const headers = document.querySelectorAll('.header');
   headers.forEach(header => {
     header.style.backgroundColor = bodyElement.classList.contains('dark-mode') ? 'var(--dark-bg)' : 'var(--light-bg)';
